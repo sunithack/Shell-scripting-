@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#List S3 buckets
+echo "Print list of s3 buckets"
+aws s3 ls
+
+#List EC2 Instances
+echo "Print list of EC2 instances"
+aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'
